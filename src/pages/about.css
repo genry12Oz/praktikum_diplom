@@ -1,7 +1,7 @@
 /* подключаю normalize.css*/
 @import url('../vendor/normalize.css');
 /* подключаю шрифты */
-@import url('../vendor/fonts/fonts.css');
+@import url('../vendor/fonts.css');
 /* Подключаю основные настройки слайдера */
 @import url('../../node_modules/swiper/css/swiper.min.css');
 /* Блок Header */

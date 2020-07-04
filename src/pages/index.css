@@ -7,7 +7,7 @@
 /* подключаю normalize.css*/
 @import url('../vendor/normalize.css');
 /* подключаю шрифты */
-@import url('../vendor/fonts/fonts.css');
+@import url('../vendor/fonts.css');
 /* Блок Header */
 @import url('../blocks/header/_main/header_main.css');
 @import url('../blocks/header/__nav-wrap/header__nav-wrap.css');
