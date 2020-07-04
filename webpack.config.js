@@ -11,18 +11,24 @@ const webpack = require('webpack');
 // и дополнительную оптимизацию CSS
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
+// константа для указания директории файлов
+const filename = ext => isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`;
 
 module.exports = {
-    entry: { main: './src/index.js' },
+    entry: { // делаю несколько точек входа
+        index: './src/JS/index.js',
+        about: './src/JS/about.js',
+        analytics: './src/JS/analytics.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'), // переписали точку выхода, используя утилиту path
-        filename: '[name].[chunkhash].js'
+        filename: `JS/${filename('js')}`
     },
     module: {
         rules: [{ // тут описываются правила
             test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-            use: { loader: "babel-loader" }, // весь JS обрабатывается пакетом babel-loader
-            exclude: /node_modules/ // исключает папку node_modules
+            exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/, // исключает папку node_modules
+            use: { loader: "babel-loader" } // весь JS обрабатывается пакетом babel-loader
             },
             {
             test: /\.css$/, // применять это правило только к CSS-файлам
@@ -37,28 +43,33 @@ module.exports = {
                 {
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
-                    publicPath: 'img',
-                    outputPath: 'img',
-                    useRelativePath: true,
+                    name: './images/[name].[ext]',
                     esModule: false,
                     }
                 },
                 {
                     loader: 'image-webpack-loader',
-                    options: {}
+                    options: {
+                        bypassOnDebug: true,
+                        disable: true,
+                    }
                 },
                  ]
             },
             {
-            test: /\.(eot|ttf|woff|woff2)$/,
-                loader: 'file-loader?name=./vendor/[name].[ext]'
-        }
+            test: /\.(ttf|woff2?|eot)$/,
+            use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "./vendor/fonts/__file/[name].[ext]",
+                    }
+                }
+            },
         ]
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'style.[contenthash].css'
+            filename: `./pages/${filename('css')}`
         }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,
@@ -72,7 +83,20 @@ module.exports = {
             // Означает, что:
             inject: false, // стили НЕ нужно прописывать внутри тегов
             template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
-            filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+            filename: 'index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: './src/about.html',
+            filename: 'about.html',
+            chunks: ['about']
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: './src/analytics.html',
+            filename: 'analytics.html',
+            chunks: ['analytics']
         }),
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({

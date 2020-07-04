@@ -1,0 +1,5 @@
+.history__swiper-button_next {
+    background-image: url('../../../../images/history/__right.png');
+
+    right: -80px;
+}
