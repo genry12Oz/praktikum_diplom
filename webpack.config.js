@@ -27,6 +27,7 @@ module.exports = {
     resolve: {
         alias: {
           images: path.resolve(__dirname, '.src/images'),
+          vendor: path.resolve(__dirname, '.src/vendor')
         },
       },
     module: {
@@ -66,7 +67,7 @@ module.exports = {
             use: {
                     loader: "file-loader",
                     options: {
-                        name: "vendor/fonts/__file/[name].[ext]",
+                        name: "vendor/fonts/[name].[ext]",
                     }
                 }
             },

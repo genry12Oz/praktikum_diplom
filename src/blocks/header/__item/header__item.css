@@ -17,8 +17,7 @@ and (max-width: 1024px) {
 }
 
 @media screen 
-and (min-width: 1025px)
-and (max-width: 1440px) {
+and (min-width: 1025px) {
   .header__item:first-child {
       padding: 0 0 23px;
       margin-right: 34px;

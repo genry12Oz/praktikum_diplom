@@ -63,8 +63,7 @@ and (max-width: 1024px) {
 }
 
 @media screen 
-and (min-width: 1025px)
-and (max-width: 1440px) {
+and (min-width: 1025px) {
     .results__link {
         margin: 16px 16px 0 0;
     }

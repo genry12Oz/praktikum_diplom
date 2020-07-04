@@ -10,8 +10,7 @@
 }
 
 @media screen 
-and (min-width: 1025px)
-and (max-width: 1440px) {
+and (min-width: 1025px) {
     .client__text {
         width: 815px;
         margin-top: 24px;

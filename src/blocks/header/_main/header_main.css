@@ -38,7 +38,7 @@ and (max-width: 1439px) {
 }
 
 @media screen 
-and (width: 1440px) {
+and (min-width: 1440px) {
     .header_main {
       background-image: url('../../../images/header/__background-image_desktop_1440.png');
     }

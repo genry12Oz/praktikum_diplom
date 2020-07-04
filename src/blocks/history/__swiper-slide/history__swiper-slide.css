@@ -12,8 +12,7 @@
 }
 
 @media screen 
-and (min-width: 1366px)
-and (max-width: 1440px) {
+and (min-width: 1366px) {
     .history__swiper-slide {
         max-width: 358px;
         flex-shrink: 0;

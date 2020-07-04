@@ -30,8 +30,7 @@ and (max-width: 1024px) {
 }
 
 @media screen 
-and (min-width: 1025px)
-and (max-width: 1440px) {
+and (min-width: 1025px) {
   .header__input {
       width: 608px;
       height: 64px;

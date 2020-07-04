@@ -7,8 +7,7 @@
 }
 
 @media screen 
-and (min-width: 1366px)
-and (max-width: 1440px) {
+and (min-width: 1366px) {
     .history__image {
         width: 64px;
         height: 64px;

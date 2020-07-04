@@ -8,8 +8,7 @@
 }
 
 @media screen 
-and (min-width: 768px)
-and (max-width: 1440px) {
+and (min-width: 768px) {
     .graph__elements {
         margin: 16px 0 0;
     }

@@ -19,8 +19,7 @@ and (max-width: 1024px) {
 }
 
 @media screen 
-and (min-width: 1025px)
-and (max-width: 1440px) {
+and (min-width: 1025px) {
     .results__title {
         width: 500px;
         font-size: 40px;

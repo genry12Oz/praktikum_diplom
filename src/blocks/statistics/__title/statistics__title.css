@@ -18,8 +18,7 @@ and (max-width: 1024px) {
 }
 
 @media screen 
-and (min-width: 1025px)
-and (max-width: 1440px) {
+and (min-width: 1025px) {
     .statistics__title {
         font-size: 40px;
     }

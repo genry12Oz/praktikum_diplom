@@ -7,8 +7,7 @@
 }
 
 @media screen 
-and (min-width: 768px)
-and (max-width: 1440px) {
+and (min-width: 768px) {
     .footer__links {
         flex-direction: row;
     }
