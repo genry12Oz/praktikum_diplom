@@ -24,6 +24,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'), // переписали точку выхода, используя утилиту path
         filename: `JS/${filename('js')}`
     },
+    resolve: {
+        alias: {
+          images: path.resolve(__dirname, '.src/images'),
+        },
+      },
     module: {
         rules: [{ // тут описываются правила
             test: /\.js$/, // регулярное выражение, которое ищет все js файлы
@@ -43,7 +48,7 @@ module.exports = {
                 {
                 loader: 'file-loader',
                 options: {
-                    name: './images/[name].[ext]',
+                    name: 'images/[name].[ext]',
                     esModule: false,
                     }
                 },
@@ -61,7 +66,7 @@ module.exports = {
             use: {
                     loader: "file-loader",
                     options: {
-                        name: "./vendor/fonts/__file/[name].[ext]",
+                        name: "vendor/fonts/__file/[name].[ext]",
                     }
                 }
             },
