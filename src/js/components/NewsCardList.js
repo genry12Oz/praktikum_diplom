@@ -16,9 +16,7 @@ export default class NewsCardList {
 
     check() {
         let saveData = this.storage.parceData();
-
-        console.log(saveData.articles);
-
+        
         if (saveData.articles.length) {
             this.render(saveData);
         }
