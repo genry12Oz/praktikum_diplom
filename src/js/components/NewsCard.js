@@ -1,6 +1,5 @@
 export default class NewsCard {
     constructor() {
-        console.log('Я - Card!')
     }
 
     create(image, data, title, description, source, url) {

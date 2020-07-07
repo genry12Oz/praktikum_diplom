@@ -13,7 +13,3 @@ import Statistics from '../js/components/Statistics.js';
 // инстансы классов
 const storage = new DataStorage();
 const stat = new Statistics(storage, input, category);
-
-console.log(input);
-
-console.log('analytics');

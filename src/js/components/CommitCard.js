@@ -1,7 +1,5 @@
 export default class CommitCard {
     constructor() {
-
-        console.log('Я - карточка коммита')
     }
 
     create(data, image, title, mail, message) {

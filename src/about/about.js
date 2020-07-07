@@ -20,5 +20,3 @@ import GithubApi from '../js/modules/GithubApi.js';
 const commitCard = new CommitCard();
 const commitList = new CommitCardList(container, timeConverter, commitCard, swiper);
 const gitApi =  new GithubApi(commitList);
-
-console.log('about');

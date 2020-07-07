@@ -4,8 +4,6 @@ export default class CommitCardList {
         this.converter = converter;
         this.instance = instance;
         this.swiper = swiper;
-
-        console.log('Я - commitList');
     }
 
     render(obj) {

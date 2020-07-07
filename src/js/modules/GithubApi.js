@@ -3,7 +3,6 @@ export default class GithubApi {
         this.instance = instance;
 
         this.getCommits();
-        console.log('Я - gitApi');
     }
 
     getCommits() {

@@ -10,13 +10,11 @@ export default class NewsCardList {
 
         this.setEventListener();
         this.check();
-
-        console.log('Я - CardList!')
     }
 
     check() {
         let saveData = this.storage.parceData();
-        
+
         if (saveData.articles.length) {
             this.render(saveData);
         }

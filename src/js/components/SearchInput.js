@@ -11,8 +11,6 @@ export default class SearchInput {
 
         // листенеры
         this.setEventListener();
-
-        console.log('Я - SearchInput!');
     }
 
     // валидация поля формы
