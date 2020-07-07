@@ -17,9 +17,9 @@ export default class NewsCardList {
 
         if (saveData == 'undefind') {
             this.clean()
-        } 
-
-        this.render(saveData);
+        } else {
+            this.render(saveData)
+        }
     }
 
     render(obj) {
