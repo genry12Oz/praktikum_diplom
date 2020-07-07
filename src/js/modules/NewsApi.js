@@ -18,7 +18,7 @@ export default class NewsApi {
         // получаю тему запроса
         let topic = this.input.value;
         // url поиска по любой новости
-        let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${this.key}`;
+        let url = `https://praktikum.tk/news/v2/everything?q=${topic}&apiKey=${this.key}`;
 
         fetch(url)
           .then((res) => {
