@@ -24,15 +24,15 @@
           <p class="header__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за 
             прошедшую неделю.</p>
           <form class="header__search-form">
-            <input name="theme" class="header__input" placeholder="Введите тему новости" required> <!-- Кастомные стили юудут добавлены в JS-->
-            <!-- <span id='error-about'class='header__error-message header__error-message_hiden'></span> -->  <!-- Пока не используется -->
+            <input name="theme" class="header__input" placeholder="Введите тему новости" required>
+            <span id='error-message'class='header__error-message header__error-message_hiden'></span>
             <button id='submit-header' type='submit' class="button header__button">Искать</button>
           </form>
         </div>
       </header>
       <main class="content">
         <section class="preloader">
-          <div class="preloader_active"></div>
+          <div class="preloader__circle"></div>
           <p class="preloader__message">Идет поиск новостей...</p>
         </section>
         <section class="error">
@@ -47,69 +47,9 @@
           </div>
           <div class="results__container">
             <!-- Сюда будет вкладывать карточки JS -->
-            <div class="results__card card">
-              <img class="card__image" src="<%=require('./images/card/__01.png')%>" alt="Первая карточка">
-              <div class="card__info">
-                <p class="card__time">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
-                  складываться система национальных парков...</p>
-                <a class="link card__link" href="#">ЛЕНТА.РУ</a>
-              </div>
-            </div>
-            <div class="results__card card">
-              <img class="card__image" src="<%=require('./images/card/__02.png')%>" alt="Вторая карточка">
-              <div class="card__info">
-                <p class="card__time">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
-                  складываться система национальных парков...</p>
-                <a class="link card__link" href="#">МЕДУЗА</a>
-              </div>
-            </div>
-            <div class="results__card card">
-              <img class="card__image" src="<%=require('./images/card/__03.png')%>" alt="Третья карточка">
-              <div class="card__info">
-                <p class="card__time">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
-                  складываться система национальных парков...</p>
-                <a class="link card__link" href="#">РИА</a>
-              </div>
-            </div>
-            <div class="results__card card">
-              <img class="card__image" src="<%=require('./images/card/__01.png')%>" alt="Первая карточка">
-              <div class="card__info">
-                <p class="card__time">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
-                  складываться система национальных парков...</p>
-                <a class="link card__link" href="#">ЛЕНТА.РУ</a>
-              </div>
-            </div>
-            <div class="results__card card">
-              <img class="card__image" src="<%=require('./images/card/__02.png')%>" alt="Вторая карточка">
-              <div class="card__info">
-                <p class="card__time">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
-                  складываться система национальных парков...</p>
-                <a class="link card__link" href="#">МЕДУЗА</a>
-              </div>
-            </div>
-            <div class="results__card card">
-              <img class="card__image" src="<%=require('./images/card/__03.png')%>" alt="Третья карточка">
-              <div class="card__info">
-                <p class="card__time">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
-                  складываться система национальных парков...</p>
-                <a class="link card__link" href="#">РИА</a>
-              </div>
-            </div>
           </div>
-          <form class="results__form"> <!-- Пока не используется-->
-            <button id='submit-results' type='submit' class="button results__button">Показать еще</button>
+          <form class="results__form">
+            <button id='add-button' type='button' class="button results__button">Показать еще</button>
           </form>
         </section>
         <section class="about">

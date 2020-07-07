@@ -1,0 +1,13 @@
+.header__error-message {
+    width: 250px;
+    height: 11px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-top: 5px;
+    
+    position: absolute;
+}

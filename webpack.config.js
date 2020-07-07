@@ -16,9 +16,9 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`;
 
 module.exports = {
     entry: { // делаю несколько точек входа
-        index: './src/JS/index.js',
-        about: './src/JS/about.js',
-        analytics: './src/JS/analytics.js'
+        index: './src/index.js',
+        about: './src/about/about.js',
+        analytics: './src/analytics/analytics.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'), // переписали точку выхода, используя утилиту path
