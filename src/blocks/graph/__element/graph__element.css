@@ -1,0 +1,19 @@
+.graph__element {
+    /* width: 100%; эти данные будет подставдлять JS, пока что оны вынесены в самый низ main.css (analytics.css)*/
+    height: 24px;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFF;
+
+    background-color:#2F71E5;;
+}

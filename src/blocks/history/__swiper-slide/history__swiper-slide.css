@@ -1,0 +1,22 @@
+.history__swiper-slide {
+    /* width: 288px;  @media!! */
+    /* height: 264px; @media!! */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background: #fff;
+    border-radius: 16px;
+
+    padding: 16px 26px 62px 16px;
+}
+
+@media screen 
+and (min-width: 1366px) {
+    .history__swiper-slide {
+        max-width: 358px;
+        flex-shrink: 0;
+
+        padding: 24px 24px 58px;
+    }
+}
