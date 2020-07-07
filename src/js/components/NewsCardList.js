@@ -15,7 +15,7 @@ export default class NewsCardList {
     check() {
         let saveData = this.storage.parceData();
 
-        if (saveData == 'undefind') {
+        if (saveData === 0) {
             this.clean()
         } else {
             this.render(saveData)

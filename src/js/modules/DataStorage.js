@@ -11,8 +11,11 @@ export default class DataStorage {
     }
 
     parceData() {
-        let storageData = JSON.parse(this.storage.getItem ('data'));
-
-        return storageData;
+        if (this.storage.getItem('data') == null) {
+            return 0
+        } else {
+            let storageData = JSON.parse(this.storage.getItem ('data'));
+            return storageData;
+        }
     }
 }
