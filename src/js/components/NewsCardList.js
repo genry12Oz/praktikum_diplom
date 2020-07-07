@@ -15,9 +15,11 @@ export default class NewsCardList {
     check() {
         let saveData = this.storage.parceData();
 
-        if (saveData.articles.length) {
-            this.render(saveData);
-        }
+        if (saveData == 'undefind') {
+            this.clean()
+        } 
+
+        this.render(saveData);
     }
 
     render(obj) {
