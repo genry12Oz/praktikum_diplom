@@ -45,6 +45,9 @@ const GRAPH_ELEMENT = document.querySelectorAll('.graph__element');
 // контейнер где хранятся карточки с коммитами
 const COMMIT_CONTAINER = document.querySelector('.swiper-wrapper');
 
+//                   -- analytics.js --
+const CATEGORY = document.querySelector('.statistics__category');
+
 export {
     API_KEY,
     PRELOADER,
@@ -65,5 +68,6 @@ export {
     GRAPH_DATA,
     GRAPH_ELEMENT,
     // ERRORS
-    COMMIT_CONTAINER
+    COMMIT_CONTAINER,
+    CATEGORY
   };
