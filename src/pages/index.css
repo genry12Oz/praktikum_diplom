@@ -24,6 +24,7 @@
 @import url('../blocks/header/__search-form/header__search-form.css');
 @import url('../blocks/header/__input/header__input.css');
 @import url('../blocks/header/__input/_invalid/header__input_invalid.css');
+@import url('../blocks/header/__error-message/header__error-message.css');
 /* @import url('../blocks/header/__error-message/header__error-message.css'); */
 @import url('../blocks/header/__button/header__button.css');
 /* Блок Preloader */
@@ -110,4 +111,8 @@
 
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.button:focus {
+    outline-style: none;
 }

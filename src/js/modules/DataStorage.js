@@ -12,9 +12,11 @@ export default class DataStorage {
 
     parceData() {
         if (this.storage.getItem('data') == null) {
+            console.log("в хранилище пусто")
             return 0
         } else {
             let storageData = JSON.parse(this.storage.getItem ('data'));
+            console.log("в хранилище есть данные")
             return storageData;
         }
     }

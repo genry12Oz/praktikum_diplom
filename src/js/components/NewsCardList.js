@@ -1,12 +1,14 @@
 export default class NewsCardList {
-    constructor(storage, container, card, form, button, converter, block) {
+    constructor(storage, distributor, container, card, form, button, block) {
         this.storage = storage;
+        this.distributor = distributor;
         this.container = container;
         this.card = card;
         this.form = form;
         this.button = button;
-        this.converter = converter;
         this.block = block;
+
+        let arr = this.arr;
 
         this.setEventListener();
         this.check();
@@ -15,37 +17,23 @@ export default class NewsCardList {
     check() {
         let saveData = this.storage.parceData();
 
-        if (saveData === 0) {
+        if (saveData == 0) {
             this.clean()
         } else {
             this.render(saveData)
         }
     }
 
-    render(obj) {
+    render(data) {
         this.container.textContent = '';
+        
+        let type = 'news';
+        this.arr = this.distributor.assignment(data, type);
 
-        this.arr = [];
-
-        this.getCard(obj);
+        this.addCard();
 
         this.block.classList.remove('results_hide');
         this.form.classList.add('results__form_active');
-    }
-
-    getCard(obj) {
-        obj.articles.forEach(element => {
-            let image = element.urlToImage;
-            let data = this.converter(element.publishedAt.substring(0, 10));
-            let title = element.title;
-            let description = element.description;
-            let source = element.source.name;
-            let url = element.url;
-            
-            this.arr.push(this.card.create(image, data, title, description, source, url));
-        })
-
-        this.addCard();
     }
     
     addCard() {
@@ -60,11 +48,11 @@ export default class NewsCardList {
         }
     }
 
-    setEventListener() {
-        this.button.addEventListener('click', () => this.addCard());
-    }
-
     clean() {
         this.block.classList.add('results_hide');
+    }
+
+    setEventListener() {
+        this.button.addEventListener('click', () => this.addCard());
     }
 }

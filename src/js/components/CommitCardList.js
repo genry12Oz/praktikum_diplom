@@ -1,33 +1,32 @@
 export default class CommitCardList {
-    constructor(container, converter, instance, swiper) {
+    constructor(container, api, distributor, swiper) {
         this.container = container;
-        this.converter = converter;
-        this.instance = instance;
+        this.api = api;
+        this.distributor = distributor;
         this.swiper = swiper;
+
+        this.render();
     }
 
-    render(obj) {
-        this.container.textContent = ''; 
+    render() {
+        this.container.textContent = '';
 
-        this.getCommit(obj);
+        let arr;
+        let type = 'git';
+        this.api.getCommits()
+            .then(data => {
+                arr = this.distributor.assignment(data, type)
+            })
+            .then(() => {
+                this.addCard(arr)
+            })
+    }
+
+    addCard(arr) {
+        arr.forEach(element => {
+            this.container.appendChild(element)
+        })
 
         this.swiper.update();
-    }
-
-    getCommit(obj) {
-
-        obj.forEach(element => {
-            let data = this.converter(element.commit.author.date.substring(0, 10));
-            let image = element.author.avatar_url;
-            let title = element.commit.committer.name;
-            let mail = element.commit.committer.email;
-            let message = element.commit.message;
-
-            this.addCommit(data, image, title, mail, message)
-        })
-    }
-
-    addCommit(data, image, title, mail, message) {
-        this.container.appendChild(this.instance.create(data, image, title, mail, message));
     }
 }

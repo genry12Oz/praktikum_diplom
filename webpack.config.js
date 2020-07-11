@@ -33,7 +33,7 @@ module.exports = {
     module: {
         rules: [{ // тут описываются правила
             test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-            exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/, // исключает папку node_modules
+            exclude: /node_modules/, // исключает папку node_modules       // вот это бюло нужно для swiper но щас и так работает --> \/(?!(dom7|ssr-window|swiper)\/).*
             use: { loader: "babel-loader" } // весь JS обрабатывается пакетом babel-loader
             },
             {

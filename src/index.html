@@ -24,7 +24,7 @@
           <p class="header__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за 
             прошедшую неделю.</p>
           <form class="header__search-form">
-            <input name="theme" class="header__input" placeholder="Введите тему новости" required>
+            <input name="theme" class="header__input" placeholder="Введите тему новости" pattern="^[\w,\s,ёЁ]+$" required>
             <span id='error-message'class='header__error-message header__error-message_hiden'></span>
             <button id='submit-header' type='submit' class="button header__button">Искать</button>
           </form>
