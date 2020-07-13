@@ -5,12 +5,13 @@ export default class Distributor {
     }
 
     assignment(data, type) {
-        if (type === 'news') {
-            let arr = [];
+        let arr = [];
+        let timeType = 'yarsON';
 
+        if (type === 'news') {
             data.articles.forEach(element => {
                 let image = element.urlToImage;
-                let time = this.converter(element.publishedAt);
+                let time = this.converter(element.publishedAt, timeType);
                 let title = element.title;
                 let description = element.description;
                 let source = element.source.name;
@@ -22,10 +23,8 @@ export default class Distributor {
             return arr;
 
         } else if (type === 'git') {
-            let arr = [];
-
             data.forEach(element => {
-                let time = this.converter(element.commit.author.date);
+                let time = this.converter(element.commit.author.date, timeType);
                 let image = element.author.avatar_url;
                 let title = element.commit.committer.name;
                 let mail = element.commit.committer.email;

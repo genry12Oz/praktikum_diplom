@@ -82,33 +82,3 @@
     font-style: normal;
     font-weight: 500;
 }
-
-/* Это временное решение чтобы не пихать в блоки лишние папки и файлы
-    все это будет делать JS */
-.graph__element_mon {
-    width: 15%;
-}
-
-.graph__element_tue {
-    width: 18%;
-}
-
-.graph__element_wed {
-    width: 11%;
-}
-
-.graph__element_thu {
-    width: 39%;
-}
-
-.graph__element_fri {
-    width: 45%;
-}
-
-.graph__element_sat {
-    width: 73%;
-}
-
-.graph__element_sun {
-    width: 34%;
-}

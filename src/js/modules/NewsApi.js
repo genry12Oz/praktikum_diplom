@@ -1,7 +1,9 @@
 export default class NewsApi {
-    constructor (input, apiKey, preloader, notFound, storage, instance) {
+    constructor (input, apiKey, currentData, daysAgo, preloader, notFound, storage, instance) {
         this.input = input;
         this.key = apiKey;
+        this.currentData = currentData;
+        this.daysAgo = daysAgo;
         this.loader = preloader;
         this.error = notFound;
         this.storage = storage;
@@ -14,7 +16,13 @@ export default class NewsApi {
 
         let topic = this.input.value;
 
-        let url = `https://praktikum.tk/news/v2/everything?q=${topic}&apiKey=${this.key}`;
+        let timeNow = this.currentData();
+        timeNow = timeNow.toISOString();
+
+        let weekAgo = this.daysAgo(7);
+        weekAgo = weekAgo.toISOString();
+
+        let url = `https://praktikum.tk/news/v2/everything?q=${topic}&from=${weekAgo}&to=${timeNow}&language=ru&pageSize=100&apiKey=${this.key}`;
 
         fetch(url)
           .then(res => {
@@ -25,7 +33,7 @@ export default class NewsApi {
             return Promise.reject(`Что-то пошло не так: ${res.status}`);
         })
           .then(data => {
-            this.storage.saveData(data);
+            this.storage.saveData(data, topic);
             this.instance.check();
             this.loader.classList.remove('preloader_active');
         })
