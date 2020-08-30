@@ -22,7 +22,7 @@ export default class NewsApi {
         let weekAgo = this.daysAgo(7);
         weekAgo = weekAgo.toISOString();
 
-        let url = `https://praktikum.tk/news/v2/everything?q=${topic}&from=${weekAgo}&to=${timeNow}&language=ru&pageSize=100&apiKey=${this.key}`;
+        let url = `https://nomoreparties.co/news/v2/everything?q=${topic}&from=${weekAgo}&to=${timeNow}&language=ru&pageSize=100&apiKey=${this.key}`;
 
         fetch(url)
           .then(res => {

@@ -46,7 +46,7 @@ export default class Statistics {
         week.map(element => {
             days.push(this.converter(element, timeType))
         })
-        console.log(days)
+        // console.log(days)
 
         this.showDays(days);
     }
@@ -113,7 +113,7 @@ export default class Statistics {
     }
 
     drawGraph(weekDays) {
-        console.log(weekDays)
+        // console.log(weekDays)
         for (let i = 0; i < 7; i++) {
             this.graphElement[i].textContent = weekDays[i];
             this.graphElement[i].style.width = weekDays[i] + "%";

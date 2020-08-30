@@ -10,17 +10,17 @@ export default class DataStorage {
         this.storage.setItem('data', JSON.stringify(data));
         this.storage.setItem('theme', JSON.stringify(topic));
 
-        console.log(this.storage.getItem ('theme'));
+        // console.log(this.storage.getItem ('theme'));
     }
 
     parceData() {
         if (this.storage.getItem('data') == null) {
-            console.log("в хранилище пусто");
+            // console.log("в хранилище пусто");
             return 0
         } else {
             let storageData = JSON.parse(this.storage.getItem ('data'));
-            console.log("в хранилище есть данные");
-            console.log(storageData);
+            // console.log("в хранилище есть данные");
+            // console.log(storageData);
             return storageData
         }
     }
