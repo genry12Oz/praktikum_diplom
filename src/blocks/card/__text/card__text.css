@@ -1,5 +1,6 @@
 .card__text {
     width: 255px;
+    height: 88px;
     font-family: Roboto;
     font-style: normal;
     font-weight: 400;
@@ -25,6 +26,7 @@ and (max-width: 1024px) {
 and (min-width: 1025px) {
     .card__text {
         width: 350px;
+        height: 110px;
         margin: 16px 0 0;
     }
 }

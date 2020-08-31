@@ -16,9 +16,9 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`;
 
 module.exports = {
     entry: { // делаю несколько точек входа
-        index: './src/JS/index.js',
-        about: './src/JS/about.js',
-        analytics: './src/JS/analytics.js'
+        index: './src/index.js',
+        about: './src/about/about.js',
+        analytics: './src/analytics/analytics.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'), // переписали точку выхода, используя утилиту path
@@ -33,7 +33,7 @@ module.exports = {
     module: {
         rules: [{ // тут описываются правила
             test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-            exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/, // исключает папку node_modules
+            exclude: /node_modules/, // исключает папку node_modules       // вот это бюло нужно для swiper но щас и так работает --> \/(?!(dom7|ssr-window|swiper)\/).*
             use: { loader: "babel-loader" } // весь JS обрабатывается пакетом babel-loader
             },
             {

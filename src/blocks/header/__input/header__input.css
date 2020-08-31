@@ -14,10 +14,17 @@
     line-height: 22px;
     color: #1A1B22;
     padding: 17px 16px;
+
+    position: relative;
 }
 
 .header__input::placeholder{
   color: #B6BCBF;
+}
+
+.header__input:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 2px lightskyblue;
 }
 
 @media screen 

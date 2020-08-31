@@ -1,5 +1,6 @@
 .results__form {
     margin: 13px 0 0;
+    display: none;
 }
 
 @media screen 
