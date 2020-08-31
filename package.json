@@ -18,14 +18,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/genry12Oz/praktikum_diplom.git"
+    "url": "git+https://github.com/genry12Oz/What-s-going-on-in-the-world.git"
   },
   "author": "Kamensky Sergey",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/genry12Oz/praktikum_diplom/issues"
+    "url": "https://github.com/genry12Oz/What-s-going-on-in-the-world/issues"
   },
-  "homepage": "https://genry12oz.github.io/praktikum_diplom/",
+  "homepage": "https://genry12oz.github.io/What-s-going-on-in-the-world/",
   "devDependencies": {
     "@babel/cli": "7.10.1",
     "@babel/core": "7.10.2",
